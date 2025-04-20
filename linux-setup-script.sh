@@ -23,5 +23,5 @@ cp sample.env .env
 echo "Run migrations..."
 $PYTHON_CMD manage.py migrate
 
-echo "Run tests..."
-$PYTHON_CMD manage.py test
+echo "Run Server..."
+$PYTHON_CMD manage.py runserver
