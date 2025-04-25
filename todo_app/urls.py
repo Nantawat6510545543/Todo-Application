@@ -1,7 +1,7 @@
 from django.urls import path
 
 from django.conf import settings
-from .views import index_view, signup_view, login_view, logout_view, todo_list_view, add_todo_view
+from .views import index_view, signup_view, login_view, logout_view, todo_list_view, add_todo_view, delete_todo_view
 from django.conf.urls.static import static
 
 app_name = 'todo'
@@ -13,4 +13,5 @@ urlpatterns = [
     path('logout/', logout_view, name='logout'),
     path('todos/', todo_list_view, name='todo_list'),
     path('add/', add_todo_view, name='add_todo'),
+    path('delete/<int:pk>/', delete_todo_view, name='delete_todo'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
