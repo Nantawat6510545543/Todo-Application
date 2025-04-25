@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo App</title>
+</head>
+<body>
+<h1>Welcome to the Todo Application</h1>
+
+{% if user.is_authenticated %}
+<p>Hello, {{ user.username }}!</p>
+<p><a href="{% url 'todo:todo_list_view' %}">Go to your Todo List</a></p>
+<p><a href="{% url 'todo:logout' %}">Logout</a></p>
+{% else %}
+<p><a href="{% url 'todo:login' %}">Login</a> or <a href="{% url 'todo:signup' %}">Sign Up</a> to manage your tasks!</p>
+{% endif %}
+</body>
+</html>
