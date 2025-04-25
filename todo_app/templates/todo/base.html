@@ -45,6 +45,12 @@
     if (savedTheme) {
         html.setAttribute('data-theme', savedTheme);
     }
+
+    document.querySelectorAll('select.auto-submit').forEach(select => {
+        select.addEventListener('change', () => {
+            select.form.submit();
+        });
+    });
 </script>
 </body>
 </html>

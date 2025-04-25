@@ -3,9 +3,7 @@
 {% block content %}
 <h2>{{ user.username }}'s Todo List</h2>
 
-<p>
-    <a href="{% url 'todo:add_todo' %}" class="button">+ Add New Todo</a>
-</p>
+<p><a href="{% url 'todo:add_todo' %}" class="button">+ Add New Todo</a></p>
 
 {% if todos %}
 <table>
@@ -22,7 +20,17 @@
     <tr>
         <td>{{ todo.title }}</td>
         <td>{{ todo.description }}</td>
-        <td>{{ todo.status }}</td>
+        <td>
+            <form method="post" style="display: flex; gap: 8px; align-items: center;">
+                {% csrf_token %}
+                <input type="hidden" name="todo_id" value="{{ todo.id }}">
+                <select name="status" class="auto-submit">
+                    {% for value, label in status_choices %}
+                    <option value="{{ value }}" {% if value == todo.status %}selected{% endif %}>{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </td>
         <td>{{ todo.created_at|date:"M d, Y H:i" }}</td>
     </tr>
     {% endfor %}
