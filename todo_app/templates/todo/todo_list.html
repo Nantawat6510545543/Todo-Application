@@ -1,0 +1,17 @@
+{% load static %}
+
+
+<h2>{{ user.username }}'s Todo List</h2>
+
+<ul>
+    {% for todo in todos %}
+    <li>
+        <strong>{{ todo.title }}</strong> - {{ todo.status }}
+        <p>{{ todo.description }}</p>
+    </li>
+    {% empty %}
+    <li>No tasks yet.</li>
+    {% endfor %}
+</ul>
+
+<p><a href="{% url 'todo:logout' %}">Logout</a></p>
