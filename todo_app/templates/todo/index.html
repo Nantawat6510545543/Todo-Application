@@ -5,13 +5,9 @@
 <p>Manage your tasks easily. Stay productive and organized!</p>
 
 {% if user.is_authenticated %}
-<p>
     <a href="{% url 'todo:todo_list' %}" class="button">Go to My Todo List</a>
-</p>
 {% else %}
-<p>
     <a href="{% url 'todo:login' %}" class="button">Login</a>
     <a href="{% url 'todo:signup' %}" class="button">Sign Up</a>
-</p>
 {% endif %}
 {% endblock %}
