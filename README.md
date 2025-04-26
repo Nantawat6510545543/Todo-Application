@@ -20,6 +20,9 @@ If you're using an online database, ensure that you update the following variabl
 - `DATABASE_URL`: Replace this with your own database credentials. Obtain your Neon database URL by following the
   instructions provided in the [Connect with psql guide](https://neon.tech/docs/connect/query-with-psql-editor).
 
+> **Note**:  
+> If you try to run the application without setting `DATABASE_URL` or provide an invalid Neon URL, it will automatically **fallback to using a local SQLite3 database** for development purposes.
+
 ## Script Installation
 
 1. Clone this repository by running the following command in your terminal:
