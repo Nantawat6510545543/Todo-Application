@@ -14,7 +14,7 @@ def login_view(request):
                 return redirect('todo:index')
     else:
         form = AuthenticationForm()
-    return render(request, 'todo/login.html', {'form': form})
+    return render(request, 'todo/auth/login.html', {'form': form})
 
 def logout_view(request):
     logout(request)

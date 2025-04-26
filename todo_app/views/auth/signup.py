@@ -14,4 +14,4 @@ def signup_view(request):
             return redirect('todo:index')
     else:
         form = SignUpForm()
-    return render(request, 'todo/signup.html', {'form': form})
+    return render(request, 'todo/auth/signup.html', {'form': form})

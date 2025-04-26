@@ -20,7 +20,7 @@ def todo_list_view(request):
 
     todos = Todo.objects.filter(user=request.user).order_by('-created_at')
     status_choices = Todo.STATUS_CHOICES
-    return render(request, 'todo/todo_list.html', {
+    return render(request, 'todo/todos/todo_list.html', {
         'todos': todos,
         'status_choices': status_choices,
     })

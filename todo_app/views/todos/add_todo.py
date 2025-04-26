@@ -14,4 +14,4 @@ def add_todo_view(request):
             return redirect('todo:todo_list')
     else:
         form = TodoForm()
-    return render(request, 'todo/add_todo.html', {'form': form})
+    return render(request, 'todo/todos/add_todo.html', {'form': form})
