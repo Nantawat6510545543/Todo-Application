@@ -6,6 +6,9 @@
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.as_p }}
+    <div id="image-preview" style="margin-top: 15px;">
+        <img id="preview-img" src="" alt="Image Preview" style="max-width: 200px; max-height: 200px; display: none; border: 1px solid #ccc; padding: 5px; border-radius: 8px;">
+    </div>
     <button type="submit" class="button">Add Todo</button>
 </form>
 
